@@ -1,0 +1,205 @@
+:root {
+    --main-clr: #00866d;
+    --main-hover: rgb(34, 105, 92);
+    --small-border-r: 6px;
+    --big-border-r: 12px;
+    --third-clr: rgb(214, 214, 214);
+    --dark-gary: #555;
+    --second-clr: #333;
+}
+
+/* hero start */
+.sec-title {
+    margin: 80px auto 50px;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero .container .text h1 {
+    padding-bottom: 20px;
+}
+
+.hero .container .text h1 i {
+    font-size: 28px;
+    color: var(--main-clr);
+}
+
+.hero .container .text p {
+    line-height: 22px;
+    word-spacing: 1px;
+}
+
+.hero .container .text p span {
+    color: #fff;
+    background-color: var(--main-clr);
+}
+
+.hero .container img {
+    width: 450px;
+    border-radius: var(--big-border-r);
+    box-shadow: 12px 12px 0 0 var(--third-clr);
+}
+
+/* hero dark theme */
+body.dark .hero .container .text {
+    color: #fff;
+}
+
+@media (max-width: 1000px) {
+    .hero .container img {
+        width: 360px;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero .container {
+        flex-direction: column;
+    }
+    .hero .container img {
+        width: 90%;
+    }
+}
+
+
+/* skills */
+.skills .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.skill {
+    width: 160px;
+    aspect-ratio: 1;
+    position: relative;
+}
+
+.skill .outer {
+    width: 160px;
+    aspect-ratio: 1;
+    padding: 20px;
+    border-radius: 50vh;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, .15);
+}
+
+.skill .inner {
+    width: 120px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50vh;
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, .2),
+                0.5px 0.5px 0px rgba(0, 0, 0, .15),
+                0px 12px 10px -10px rgba(0, 0, 0, .05);
+}
+
+.skill .inner .number {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--second-clr);
+}
+
+.skill circle {
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+}
+
+.skill.animate.html circle {
+    animation: html_Anim 1.5s ease-out forwards;
+}
+
+.skill.animate.css circle {
+    animation: css_Anim 1.5s ease-out forwards;
+}
+
+.skill.animate.sass circle {
+    animation: sass_Anim 1.5s ease-out forwards;
+}
+
+.skill.animate.js circle {
+    animation: js_Anim 1.5s ease-out forwards;
+}
+
+@keyframes html_Anim {
+    100% {
+        stroke-dashoffset: 120;
+    }
+}
+
+@keyframes css_Anim {
+    100% {
+        stroke-dashoffset: 90;
+    }
+}
+
+@keyframes sass_Anim {
+    100% {
+        stroke-dashoffset: 212;
+    }
+}
+
+@keyframes js_Anim {
+    100% {
+        stroke-dashoffset: 165;
+    }
+}
+
+.skill svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.skill .title i {
+    font-size: 2.25em;
+}
+
+.skill .title i:first-child {
+    color: #e34c26;
+}
+
+.skill:nth-child(2) .title i {
+    color: #264de4;
+}
+
+.skill:nth-child(3) .title i {
+    color: #c69;
+}
+
+.skill:last-child .title i {
+    color: #F0DB4F;
+}
+
+.skill .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+@media (max-width: 767px) {
+    .skills .container {
+        flex-direction: column;
+    }
+    .skills .container .skill {
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+}
+
+/* skills dark mode */
+body.dark .skill .number {
+    color: #fff;
+}
+body.dark .skill .title h2 {
+    color: #fff;
+}
